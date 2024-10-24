@@ -17,5 +17,8 @@ namespace Entities.Models
         [StringLength(100, ErrorMessage = "Address can not be loner then 100 characters")]
         public string Address { get; set; }
         public ICollection<Account> Accounts { get; set; }
+
+       
+
     }
 }

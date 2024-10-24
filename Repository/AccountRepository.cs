@@ -10,5 +10,18 @@ namespace Repository
             : base(repositoryContext)
         {
         }
+
+        public IEnumerable<Account> AccountsByOwner(Guid ownerId)
+        {
+            return FindByCondition(a => a.OwnerId.Equals(ownerId)).ToList();
+        }
+
+        public void DeleteAllAccounts(IEnumerable<Account> accounts)
+        {
+            foreach(Account account in accounts)
+            {
+                Delete(account);
+            }
+        }
     }
 }
